@@ -1,0 +1,346 @@
+@charset "utf-8";
+
+@font-face{
+    font-family: Lora-Regular; /* Google Free Font */ 
+	src: url('Lora-Regular.ttf') format('truetype');
+}
+/*
+   eportfolio Style Sheet
+   Author: Jinhee Kim
+   Date: Apr 12, 2018
+
+   Filename: styles.css
+*/
+/* =========================================
+	Html and Body Styles 
+	======================================== */
+
+html {
+    background-color: white;
+    height: 100%;
+	font-family: Lora-Regular, sans-serif, Geneva;
+	/*rgb(249,234,229);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+}
+
+body {
+	width: 100%;
+	max-width: 1024px;
+	min-height: 100%;
+	margin: 0;
+	padding-top: 15px;
+	padding-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.5;
+	color: rgb(128, 94, 143); /* purple */
+	background-color: #F9EAE5;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+	
+/* =========================================
+		Main Styles 
+	======================================== */
+
+main {
+	overflow: auto;
+	position: relative; 
+}
+
+/* =========================================
+	Header/Navigation Styles 
+	======================================== */
+
+body > header > img {
+	width: 100%;
+}
+
+ul.navmenu {
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row wrap;
+	margin-left:auto;
+	margin-right:auto;
+	justify-content: space-around;
+	text-align: center;
+	background-color: #EECDDA;
+}
+
+ul.navmenu li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;	
+}
+
+nav > ul > li > a {
+	font-size: 1.2em;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	background-color: rgb(238, 205, 218);
+}
+
+ul.navmenu a.active {
+	font-weight: bold;
+	color: rgb(128, 94, 143);
+}
+
+/* =========================================
+		Base Flex Styles 
+	======================================== */
+
+section {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row nowrap;
+	flex-flow: row wrap;
+	color: rgb(128, 94, 143); /* purple */
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+section#resumemain {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	color: rgb(128, 94, 143); /* purple */
+	padding: 15px;
+}
+
+section#homesub {
+	display: flex;
+	flex: row wrap;
+	align-items: stretch;
+}
+
+/* =========================================
+		List image Style 
+	======================================== */
+
+article#contact ul li:first-of-type {
+	list-style-image: url(email.jpg);
+}
+
+article#contact ul li:nth-of-type(2) {
+	list-style-image: url(linkedin.png);
+}
+
+article#contact ul li:last-of-type {
+	list-style-image: url(github.png);
+}
+
+/* =========================================
+		Article Style
+	======================================== */
+
+article#pblock {
+	list-style: none;
+}
+
+article#pblock {
+	display: block;
+}
+
+article#contact {
+	display: block;
+	padding-left: 15px;
+}
+
+article#home {
+	line-height: 30px;
+}
+
+/* =========================================
+		Resume.HTML only Style
+	======================================== */
+
+section#resumemain p {
+	color: black;
+	font-weight: bold;
+}
+
+section#resumemain li {
+	color: gray;
+}
+
+/* =========================================
+		Aside Styles 
+	======================================== */
+
+aside {
+	float: left;
+	padding-top: 10px;
+}
+
+
+/* =========================================
+		Basic headings Styles 
+	======================================== */
+
+h1, h2 {
+	font-family: Lora-Regular, Geneva, sans-serif;	
+}
+
+h1 {
+	font-size: 1.7em;
+	letter-spacing: 0.1em;
+	padding-left: 15px;
+}
+
+h2 {
+	font-size: 1.3em;
+	letter-spacing: 0.05em;
+	color: #016187;
+}
+
+/* =========================================
+		Pulldown Styles 
+	======================================== */
+
+a#navicon {
+	display: none;
+}
+
+/* =========================================
+		Mobile Styles 
+	======================================== */
+
+@media only screen and (max-width: 480px) {
+	
+	a#navicon {
+		display: block;
+	}
+	
+	nav ul.navmenu  {
+		display: none;
+	}
+	
+	a#navicon:hover+ul, nav ul:hover {
+		display: block;
+		list-style: none;
+	}
+
+	ul.navmenu {
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-left:auto;
+		margin-right:auto;
+		width: 80%;
+	}
+
+	section#main {
+		display: flex;
+		flex: row wrap;
+	}
+	
+	section#homesub {
+		display: none;
+	}
+
+	aside {
+		display: none;
+	}
+	
+}
+
+/* =========================================
+		Tablet Styles 
+	======================================== */
+
+@media only screen and (min-width: 481px) {
+		
+	ul.navmenu {
+		display: -webkit-flex;
+		display: flex;
+		flex-flow: row wrap;	
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+     ul.navmenu li {
+		margin-right: 2px;
+		color: rgb(128, 94, 143); /* purple */
+	}
+
+	nav > ul > li > a {
+		font-size: 1.2em;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		text-decoration: none;
+		color: white;
+		background-color: rgb(238, 205, 218);
+	}
+	
+	aside#home {
+		position: relative;
+		left: 200px;
+		margin-top:30px;
+	}
+
+	section#flexrow {
+		display: flex;
+		flex-flow: row wrap;
+	}	
+}
+
+/* =========================================
+		Desktop Styles 
+	======================================== */
+
+@media only screen and (min-width: 769px) {
+	
+	ul.navmenu {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	nav > ul > li > a {
+		font-size: 1.2em;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		text-decoration: none;
+		color: white;
+		background-color: rgb(238, 205, 218);
+	}
+
+	aside#home {
+		position: relative;
+		left: 200px;
+		margin-top:30px;
+	}
+}
+
+/* =========================================
+		Footer Styles 
+	======================================== */
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding: 5px;
+	margin-top: 30px;
+	width: 100%;
+	background-color: rgb(238, 205, 218);
+	color: rgb(128, 94, 143) ;
+	text-align: center;
+	font-size: 1em;
+}
+
+/*
+reference: https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/
+*/
